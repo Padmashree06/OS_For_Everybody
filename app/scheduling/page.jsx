@@ -13,7 +13,7 @@ const algorithms=[
     id:0,
     shortForm:"FIFO",
     title:"First In First Out",
-    des:"This algorithem schedules processes in the order they arrive.The process that reaches the CPU queue first will run first.",
+    des:"This algorithm schedules processes in the order they arrive.The process that reaches the CPU queue first will run first.",
     realWorld: "Just like people standing in a queue at a billing counter,whoever comes first gets served first.",
     drawbacks:"A long process at the front can delay all other processes this delay is called the convoy effect.",
     input_req:["arrivalTime", "burstTime"],
@@ -53,8 +53,8 @@ const algorithms=[
   id:4,
   shortForm:"CFS",
   title:"Completely Fair Scheduler",
-  des:"Each process gets CPU time based on its weight or priority. The goal is to share CPU time fairly among all processes.This algorithem is used in Linux",
-  realWorld:"Like sharing a pizza based on hunger level — bigger appetite gets a bigger slice, but everyone gets some.",
+  des:"Each process gets CPU time based on its weight or priority. The goal is to share CPU time fairly among all processes.This algorithm is used in Linux",
+  realWorld:"Like sharing a pizza based on hunger level, bigger appetite gets a bigger slice, but everyone gets some.",
   drawbacks:"Fairness doesn't always mean best performance. Some interactive tasks may feel slower.",
   input_req:["arrivalTime", "burstTime", "weight"],
   url:'https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-sched-lottery.pdf'
@@ -114,7 +114,7 @@ const colors=['bg-blue-400','bg-violet-500', 'bg-amber-400','bg-red-500', 'bg-li
       <div className=' flex justify-center '>
          <button onClick={()=>setOpen(!open)} className={`text-white relative border-2 border-white px-5 py-2 flex items-center justify-center rounded-4xl hover:bg-white hover:text-black w-50 max-w-50 z-50 ${open?'border-b-0 border-l-0 border-r-0':' '}`}>
           <span className=''>{schedulingAlgo ? schedulingAlgo.shortForm : "Choose Algorithm"}</span>
-           <span className="ml-2 absolute right-4">⌄</span></button>
+           <span className="ml-2 absolute right-4 mb-4 text-2xl">⌄</span></button>
          {open && (
           <DropDown 
           list= {algorithms}
@@ -133,8 +133,8 @@ const colors=['bg-blue-400','bg-violet-500', 'bg-amber-400','bg-red-500', 'bg-li
       <h2 className="text-xl sm:text-2xl font-bold mb-3">{schedulingAlgo.title}</h2>
       <p className="text-base sm:text-base mb-3">{schedulingAlgo.des}</p>
       <p className="text-base sm:text-base mb-3  italic">{schedulingAlgo.realWorld}</p>
-      <p className="text-base sm:text-base mb-3"><b>Drawbacks: </b>{schedulingAlgo.drawbacks}</p>
-      <p className="text-xs 2xs:text-base mb-3">
+      <p className="text-base sm:text-base mb-5"><b>Drawbacks: </b>{schedulingAlgo.drawbacks}</p>
+      <p className="text-sm  2xs:text-base mb-3">
         Isn't it interesting?? <a target="_blank" href={schedulingAlgo.url}><u>Click me</u></a> to know more about this algorithm
       </p>
      </div>
@@ -147,7 +147,7 @@ const colors=['bg-blue-400','bg-violet-500', 'bg-amber-400','bg-red-500', 'bg-li
         </a>
       </p>
   </div>
-  <div className='w-full justify-center md:w-3/5'>
+  <div className='w-full mt-3 justify-center md:w-3/5'>
     <div className='flex flex-col justify-center md:flex-row md:items-start  m-2  gap-3'>
   <div className='flex flex-col justify-center md:justify-start md:w-3/4 gap-3'>
   <div className='flex flex-col mx-auto justify-center lg:flex-row lg:items-start lg:gap-4 gap-3'>
