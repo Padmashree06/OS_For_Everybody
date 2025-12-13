@@ -36,13 +36,13 @@ function Sjf({ np = [] }) {
         currentTime=sorted[i].arrival+ sorted[i].burst;
     }
     pending.sort((a,b)=>a.burst- b.burst);
-     next=pending.shift();
+    const next=pending.shift();
     completed.push(next);
 
     currentTime +=next.burst;
   }
   let t = 0;
-  let totalTime=0;
+  
 
 const timeline = completed.map(p => {
   const start = Math.max(t, p.arrival);
@@ -51,7 +51,7 @@ const timeline = completed.map(p => {
 
  
   t = end;
-  totalTime+=t;
+  
   return {
     ...p,
     start,
@@ -60,7 +60,7 @@ const timeline = completed.map(p => {
     
   };
 });
-
+const totalTime=t;
 
  
   return (
